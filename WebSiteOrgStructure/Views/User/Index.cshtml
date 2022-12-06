@@ -1,0 +1,25 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Сотрудники";
+}
+<form method="post" asp-controller="User" asp-action="Create">
+    <label asp-for="Name"></label>
+    <input asp-for="Name" required/>
+    <span asp-validation-for="Name"></span>
+
+    <label asp-for="Surname"></label>
+    <input asp-for="Surname" />
+
+    <label asp-for="Mail"></label>
+    <input asp-for="Mail" />
+
+    <div>
+        <input type="submit" value="Добавить" />
+    </div> 
+</form>
+<form method="get" asp-controller="User" asp-action="IndexUsersList">
+    <input type="submit" id="hider" value="Получить список сотрудников" />
+</form>
+<form method="get" asp-controller="User" asp-action="IndexCountUserAndRole">
+    <input type="submit" value="Вывести количество сотрудников и позиций по отделам" />
+</form>

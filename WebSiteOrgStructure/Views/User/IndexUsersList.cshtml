@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Список сотрудников по отделам";
+}
+@if (ViewBag.List != null)
+{
+    <table border="1" cellspacing="1" cellpadding="1">
+        <tr>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Должность</th>
+            <th>Департамент</th>
+        </tr>
+        @foreach (var l in ViewBag.List)
+        {
+
+            <tr>
+                <td>
+                    @l.Name
+                </td>
+                <td>
+                    @l.Surname
+                </td>
+                <td>
+                    @l.Role
+                </td>
+                <td>
+                    @l.DepartmentName
+                </td>
+            </tr>
+        }
+    </table>
+}

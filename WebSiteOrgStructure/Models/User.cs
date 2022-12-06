@@ -1,0 +1,28 @@
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace WebSiteOrgStructure.Models;
+
+public class User
+{
+    [Key]
+    public Guid Id { get; set; }
+
+    [Display(Name = "Введите имя")]
+    [Required(ErrorMessage = "Вам нужно ввести имя")]
+    public string? Name { get; set; }
+
+    [Display(Name = "Введите фамилию")]
+    public string? Surname { get; set; }
+
+    [Display(Name = "Почта")]
+    public string? Mail { get; set; }
+
+    [Display(Name = "Должность")]
+    public string? Role { get; set; }
+
+    [Display(Name = "Департамент")]
+    public string? DepartmentName { get; set; }
+
+}
+

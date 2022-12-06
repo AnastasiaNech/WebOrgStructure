@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Koличество сотрудников и позиций по отделам";
+}
+@if (ViewBag.ListStruct != null)
+{
+    <table border="1" cellspacing="1" cellpadding="1">
+        <tr>
+            <th>Департамент</th>
+            <th>Количество сотрудников</th>
+            <th>Количество должностей</th>
+        </tr>
+        @foreach (var l in ViewBag.ListStruct)
+        {
+
+            <tr>
+                <td>
+                    @l.DepartmentName
+                </td>
+                <td>
+                    @l.Users
+                </td>
+                <td>
+                    @l.Roles
+                </td>
+            </tr>
+        }
+    </table>
+}
+
+
