@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
+    <div class="wrapper">
+        <header>
         <div class ="container">          
             <a href="/">
                 <div class="logo"></div>
@@ -15,12 +16,16 @@
             <a href="/user">
                 <div class="employees">Сотрудники</div>
             </a>
+            <a href="/department">
+                <div class="employees">Департаменты</div>
+            </a>
         </div>
     </header>
     <main>
         @RenderBody()
     </main>
     <footer>Все права защищены,@DateTime.Now.Year</footer>
+    </div>
 </body>
 </html>
 

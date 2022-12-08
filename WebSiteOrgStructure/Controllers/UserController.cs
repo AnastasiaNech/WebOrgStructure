@@ -1,22 +1,27 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using WebSiteOrgStructure.BLL;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using WebSiteOrgStructure.Dtos;
+using WebSiteOrgStructure.MediatRAPi;
+
 
 namespace WebSiteOrgStructure.Controllers;
 
 public class UserController : Controller
 {
-    private readonly IUserBLL _userBLL;
+    private readonly IMediator _mediator;
 
-    public UserController(IUserBLL userBLL)
-    {
+    public UserController(IMediator mediator)
 
-        _userBLL = userBLL;
+    { 
+        _mediator = mediator; 
     }
 
     public IActionResult Index()
     {
+        ViewBag.Departments = new SelectList(_mediator.Send(new GetDepartmentsRequest()).Result
+            .Select(x=>x.DepartmentName)
+            .Distinct());
         return View();
     }
 
@@ -25,7 +30,7 @@ public class UserController : Controller
     {
         if (ModelState.IsValid)
         {
-            await _userBLL.CreateAsync(user);
+            await _mediator.Send(new CreateUserRequest() { userCreateDto = user }); 
             ViewBag.Message = "Сотрудник добавлен успешно!";
             return View("Result");
         }
@@ -36,16 +41,12 @@ public class UserController : Controller
     [HttpGet]
     public async Task<IActionResult> IndexUsersList()
     {
-        Task<List<UserReadDto>> list = _userBLL.GetUsersListAsync();
-        ViewBag.List = list.Result;
-        return View("IndexUsersList");
+        return View(await Task.FromResult(_mediator.Send(new GetUsersListRequest())).Result);
     }
 
     [HttpGet]
-    public IActionResult IndexCountUserAndRole()
+    public async Task<IActionResult> IndexCountUserAndRole()
     {
-       List<DepartmentStructDto> list = _userBLL.GetCountUserAndRole();
-        ViewBag.ListStruct = list;
-        return View("IndexCountUserAndRole");
+        return View(await Task.FromResult(_mediator.Send(new GetCountUserAndRoleRequest())).Result);
     }
 }

@@ -1,4 +1,5 @@
-﻿using WebSiteOrgStructure.Data.Interface;
+﻿using AutoMapper;
+using WebSiteOrgStructure.Data.Interface;
 using WebSiteOrgStructure.Dtos;
 using WebSiteOrgStructure.Models;
 
@@ -23,9 +24,9 @@ public class UserBLL: IUserBLL
         return _mapper.Map<UserReadDto>(userModel);
     }
 
-    public List<DepartmentStructDto> GetCountUserAndRole()
+    public async Task<List<DepartmentStructDto>> GetCountUserAndRole()
     {
-        var departmentStructs =  _repo.GetCountUserAndRole();
+        var departmentStructs = await _repo.GetCountUserAndRole();
         return _mapper.Map<List<DepartmentStructDto>>(departmentStructs);
     }
 

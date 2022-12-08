@@ -1,4 +1,5 @@
-﻿using WebSiteOrgStructure.Dtos;
+﻿using System.Collections.Generic;
+using WebSiteOrgStructure.Dtos;
 
 namespace WebSiteOrgStructure.BLL;
 
@@ -6,5 +7,5 @@ public interface IUserBLL
 {
     Task<UserReadDto> CreateAsync(UserCreateDto user);
     Task<List<UserReadDto>> GetUsersListAsync();
-    List<DepartmentStructDto> GetCountUserAndRole();
+    Task<List<DepartmentStructDto>> GetCountUserAndRole();
 }

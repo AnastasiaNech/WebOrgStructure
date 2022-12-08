@@ -1,10 +1,11 @@
 ﻿@model User
+
 @{
     ViewData["Title"] = "Сотрудники";
 }
 <form method="post" asp-controller="User" asp-action="Create">
     <label asp-for="Name"></label>
-    <input asp-for="Name" required/>
+    <input asp-for="Name" required />
     <span asp-validation-for="Name"></span>
 
     <label asp-for="Surname"></label>
@@ -13,9 +14,13 @@
     <label asp-for="Mail"></label>
     <input asp-for="Mail" />
 
+    <label asp-for="DepartmentName"></label>
+    <div class="dropDown">
+        @Html.DropDownList("DepartmentName", ViewBag.Departments as SelectList)
+    </div>
     <div>
         <input type="submit" value="Добавить" />
-    </div> 
+    </div>
 </form>
 <form method="get" asp-controller="User" asp-action="IndexUsersList">
     <input type="submit" id="hider" value="Получить список сотрудников" />

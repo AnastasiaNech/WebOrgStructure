@@ -10,10 +10,11 @@ public class MappingProfile: AutoMapper.Profile
         CreateMap<OrganizationalStructureDto, Department>();
         CreateMap<OrganizationalStructureDto, User>();
         CreateMap<DepartmentStruct, DepartmentStructDto>();
-        //CreateMap<Department, DepartmentDto>();
         CreateMap<UserCreateDto, User>()
             .ForMember(dest => dest.Id,
             opt => opt.MapFrom(src => Guid.NewGuid())); ;
         CreateMap<User, UserReadDto>();
+        CreateMap<Department, DepartmentReadDto>();
+        CreateMap<DepartmentReadDto, Department>();
     }
 }

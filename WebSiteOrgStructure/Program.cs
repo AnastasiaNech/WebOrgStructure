@@ -2,6 +2,7 @@ using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using OnlyOrgStructure.Data;
 using WebSiteOrgStructure.DI;
+using WebSiteOrgStructure.MediatRAPi;
 
 var builder = WebApplication.CreateBuilder(args);
 var sqlConBuilder = new SqlConnectionStringBuilder();
@@ -11,6 +12,7 @@ DI.CreateDI(builder.Services);
 sqlConBuilder.ConnectionString = builder.Configuration.GetConnectionString("SQLDbConnection");
 builder.Services.AddDbContext<DbContextConfigurer>(opt => opt.UseSqlServer(sqlConBuilder.ConnectionString));
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+MediatRDI.CreateDI(builder.Services);
 
 var app = builder.Build();
 

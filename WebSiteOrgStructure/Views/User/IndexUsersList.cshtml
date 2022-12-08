@@ -1,7 +1,9 @@
-﻿@{
+﻿@using WebSiteOrgStructure.Dtos;
+@model List<UserReadDto> 
+@{
     ViewData["Title"] = "Список сотрудников по отделам";
 }
-@if (ViewBag.List != null)
+@if (Model != null)
 {
     <table border="1" cellspacing="1" cellpadding="1">
         <tr>
@@ -10,7 +12,7 @@
             <th>Должность</th>
             <th>Департамент</th>
         </tr>
-        @foreach (var l in ViewBag.List)
+        @foreach (var l in Model)
         {
 
             <tr>

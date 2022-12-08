@@ -2,6 +2,7 @@
 using WebSiteOrgStructure.Data;
 using WebSiteOrgStructure.BLL;
 
+
 namespace WebSiteOrgStructure.DI;
 
 public class DI
@@ -12,5 +13,6 @@ public class DI
         services.AddScoped<IImportExcelRepo, ImportExcelRepo>();
         services.AddScoped<IUserRepo, UserRepo>();
         services.AddScoped<IUserBLL, UserBLL>();
+        services.AddScoped<IDepartmentBLL, DepartmentBLL>();
     }
 }

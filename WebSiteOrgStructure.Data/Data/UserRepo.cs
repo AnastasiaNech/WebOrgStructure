@@ -24,9 +24,9 @@ public class UserRepo : IUserRepo
         await _context.AddAsync(user);
     }
 
-    public List<DepartmentStruct> GetCountUserAndRole()
+    public async Task<List<DepartmentStruct>> GetCountUserAndRole()
     {
-        return _context.Users
+        return await _context.Users
         .AsQueryable()
         .Where(x => x.DepartmentName !=null)
         .GroupBy(x => x.DepartmentName)
@@ -42,7 +42,7 @@ public class UserRepo : IUserRepo
             Users = y.Users,
             Roles = y.Roles
         })
-        .ToList();
+        .ToListAsync();
     }
 
     public async Task<List<User>> GetUsersListAsync()
