@@ -5,13 +5,18 @@ VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSiteOrgStructure", "WebSiteOrgStructure\WebSiteOrgStructure.csproj", "{C00C0B77-0292-4BF7-85C5-E0A1CB078FF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSiteOrgStructure.BLL", "WebSiteOrgStructure.BLL\WebSiteOrgStructure.BLL.csproj", "{0C670D31-AF42-4DC5-A412-45303DC3B16C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSiteOrgStructure.BLL", "WebSiteOrgStructure.BLL\WebSiteOrgStructure.BLL.csproj", "{0C670D31-AF42-4DC5-A412-45303DC3B16C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSiteOrgStructure.Data", "WebSiteOrgStructure.Data\WebSiteOrgStructure.Data.csproj", "{59CFF914-8B21-4E42-8DCE-69A2123405BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSiteOrgStructure.Data", "WebSiteOrgStructure.Data\WebSiteOrgStructure.Data.csproj", "{59CFF914-8B21-4E42-8DCE-69A2123405BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSiteOrgStructure.Dtos", "WebSiteOrgStructure.Dtos\WebSiteOrgStructure.Dtos.csproj", "{E42C17EA-3437-4790-A764-E38F4F8C2648}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSiteOrgStructure.Dtos", "WebSiteOrgStructure.Dtos\WebSiteOrgStructure.Dtos.csproj", "{E42C17EA-3437-4790-A764-E38F4F8C2648}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSiteOrgStructure.MediatRAPi", "WebSiteOrgStructure.MediatRAPi\WebSiteOrgStructure.MediatRAPi.csproj", "{7C83DDB3-0AD3-45D1-8D4C-20E398BA86F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSiteOrgStructure.MediatRAPi", "WebSiteOrgStructure.MediatRAPi\WebSiteOrgStructure.MediatRAPi.csproj", "{7C83DDB3-0AD3-45D1-8D4C-20E398BA86F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestExcel", "TestExcel", "{B562263B-AA86-4954-B48C-45A09F52DB2C}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Рабочий стол\Тестовое задание онли\Тестовые данные.xlsx = ..\..\Рабочий стол\Тестовое задание онли\Тестовые данные.xlsx
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

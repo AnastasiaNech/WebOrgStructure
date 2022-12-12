@@ -1,8 +1,7 @@
-﻿@{
-    if (ViewBag.Message != null)
-    {
-        <div>
-            @ViewBag.Message
-        </div>
-    }
+﻿@if (ViewBag.Message != null)
+{
+    <div class="result">
+        @ViewBag.Message
+    </div>
 }
+

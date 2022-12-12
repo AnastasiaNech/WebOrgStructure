@@ -13,14 +13,17 @@ public class UserController : Controller
 
     public UserController(IMediator mediator)
 
-    { 
-        _mediator = mediator; 
+    {
+        _mediator = mediator;
     }
 
     public IActionResult Index()
     {
         ViewBag.Departments = new SelectList(_mediator.Send(new GetDepartmentsRequest()).Result
-            .Select(x=>x.DepartmentName)
+            .Select(x => x.DepartmentName)
+            .Distinct());
+        ViewBag.Roles = new SelectList(_mediator.Send(new GetUsersListRequest()).Result
+            .Select(x => x.Role)
             .Distinct());
         return View();
     }
@@ -30,7 +33,7 @@ public class UserController : Controller
     {
         if (ModelState.IsValid)
         {
-            await _mediator.Send(new CreateUserRequest() { userCreateDto = user }); 
+            await _mediator.Send(new CreateUserRequest() { userCreateDto = user });
             ViewBag.Message = "Сотрудник добавлен успешно!";
             return View("Result");
         }

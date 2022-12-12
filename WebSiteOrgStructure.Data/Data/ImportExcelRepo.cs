@@ -18,11 +18,10 @@ public class ImportExcelRepo : IImportExcelRepo
         _context = context;
     }
 
-    public Task ImportExcelAsync(ExcelPackage package)
+    public Task<bool> ImportExcelAsync(ExcelPackage package)
     {
         try
         {
-
             var list = new List<OrganizationalStructureDto>();
             ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
             var rowcount = worksheet.Dimension.Rows;

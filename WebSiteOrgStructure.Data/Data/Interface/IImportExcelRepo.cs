@@ -4,5 +4,5 @@ namespace WebSiteOrgStructure.Data.Interface;
 
 public interface IImportExcelRepo
 {
-    Task ImportExcelAsync(ExcelPackage package);
+    Task<bool> ImportExcelAsync(ExcelPackage package);
 }

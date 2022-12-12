@@ -18,6 +18,10 @@
     <div class="dropDown">
         @Html.DropDownList("DepartmentName", ViewBag.Departments as SelectList)
     </div>
+    <label asp-for="Role"></label>
+    <div class="dropDown">
+        @Html.DropDownList("Role", ViewBag.Roles as SelectList)
+    </div>
     <div>
         <input type="submit" value="Добавить" />
     </div>

@@ -14,6 +14,13 @@ public class DepartmentRepo : IDepartmentRepo
         _context = context;
     }
 
+    public async Task CreateDepartmentAsync(Department department)
+    {
+        ArgumentNullException.ThrowIfNull(department);
+        ArgumentNullException.ThrowIfNull(department.DepartmentName);
+        await _context.AddAsync(department);
+    }
+
     public List<string?> GetDepartmentList(string departmentName)
     {
         return _context.Departments
@@ -29,5 +36,10 @@ public class DepartmentRepo : IDepartmentRepo
         return await _context.Departments
             .AsQueryable()
             .ToListAsync();
+    }
+
+    public async Task SaveChangesAsync()
+    {
+        await _context.SaveChangesAsync();
     }
 }

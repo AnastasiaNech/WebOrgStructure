@@ -20,4 +20,12 @@ public class DepartmentBLL : IDepartmentBLL
         var departments = await _repo.GetDepartmentsListAsync();
         return _mapper.Map<List<DepartmentReadDto>>(departments);
     }
+
+    public async Task<DepartmentReadDto> CreateAsync(DepartmentCreateDto department)
+    {
+        var departmentModel = _mapper.Map<Department>(department);
+        await _repo.CreateDepartmentAsync(departmentModel);
+        await _repo.SaveChangesAsync();
+        return _mapper.Map<DepartmentReadDto>(departmentModel);
+    }
 }
