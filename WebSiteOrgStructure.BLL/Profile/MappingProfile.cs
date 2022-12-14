@@ -1,4 +1,5 @@
-﻿using WebSiteOrgStructure.Dtos;
+﻿using OfficeOpenXml.FormulaParsing.Excel.Functions.Math;
+using WebSiteOrgStructure.Dtos;
 using WebSiteOrgStructure.Models;
 
 namespace WebSiteOrgStructure.Profile;
@@ -20,5 +21,6 @@ public class MappingProfile : AutoMapper.Profile
            opt => opt.MapFrom(src => Guid.NewGuid()))
            .ForMember(dest => dest.ParentDepartmentName,
           opt => opt.MapFrom(src => src.CheckParent == "Yes" ? null : src.ParentDepartmentName));
+        CreateMap<UserUpdateDto, User>();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using OfficeOpenXml.FormulaParsing.Excel.Functions.Math;
 using WebSiteOrgStructure.BLL;
 using WebSiteOrgStructure.Data.Interface;
 using WebSiteOrgStructure.Dtos;
@@ -27,5 +28,6 @@ public class DepartmentBLL : IDepartmentBLL
         await _repo.CreateDepartmentAsync(departmentModel);
         await _repo.SaveChangesAsync();
         return _mapper.Map<DepartmentReadDto>(departmentModel);
-    }
+    }  
+    
 }

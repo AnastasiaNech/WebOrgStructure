@@ -1,16 +1,19 @@
-﻿@{
+﻿@using WebSiteOrgStructure.Dtos;
+@model List<DepartmentStructDto>
+@{
     ViewData["Title"] = "Koличество сотрудников и позиций по отделам";
 }
-@if (ViewBag.ListStruct != null)
+@if (Model != null)
 {
     <table border="1" cellspacing="1" cellpadding="1">
         <tr>
-            <th>Департамент</th>
+         <th>Департамент</th>
             <th>Количество сотрудников</th>
             <th>Количество должностей</th>
         </tr>
-        @foreach (var l in ViewBag.ListStruct)
+        @foreach (var l in Model)
         {
+
             <tr>
                 <td>
                     @l.DepartmentName
@@ -25,5 +28,3 @@
         }
     </table>
 }
-
-

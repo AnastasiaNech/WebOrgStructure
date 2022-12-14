@@ -24,6 +24,22 @@ public class UserBLL: IUserBLL
         return _mapper.Map<UserReadDto>(userModel);
     }
 
+    public async Task UpdateAsync(UserUpdateDto user)
+    {
+     
+        var userUpdate = await _repo.GetUserByIdAsync(user.Id);
+        ArgumentNullException.ThrowIfNull(userUpdate);
+        _mapper.Map(user, userUpdate);
+        await _repo.SaveChangesAsync();
+    }
+
+    public async Task<UserReadDto> GetAsync(Guid id)
+    {
+        var user = await _repo.GetUserByIdAsync(id);
+        ArgumentNullException.ThrowIfNull(user);
+        return _mapper.Map<UserReadDto>(user);
+    }
+
     public async Task<List<DepartmentStructDto>> GetCountUserAndRole()
     {
         var departmentStructs = await _repo.GetCountUserAndRole();
@@ -36,4 +52,11 @@ public class UserBLL: IUserBLL
         return _mapper.Map<List<UserReadDto>>(users);
     }
 
+    public async Task DeleteAsync(Guid userId)
+    {
+        var user = await _repo.GetUserByIdAsync(userId);
+        ArgumentNullException.ThrowIfNull(user);
+        _repo.DeleteUserAsync(user);
+        await _repo.SaveChangesAsync();
+    }
 }

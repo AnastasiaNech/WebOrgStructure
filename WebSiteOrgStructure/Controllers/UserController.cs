@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Newtonsoft.Json;
 using WebSiteOrgStructure.Dtos;
 using WebSiteOrgStructure.MediatRAPi;
 
@@ -28,6 +29,26 @@ public class UserController : Controller
         return View();
     }
 
+    public IActionResult IndexUpdateUser(string json)
+    {
+        ViewBag.Departments = new SelectList(_mediator.Send(new GetDepartmentsRequest()).Result
+            .Select(x => x.DepartmentName)
+            .Distinct());
+        ViewBag.Roles = new SelectList(_mediator.Send(new GetUsersListRequest()).Result
+            .Select(x => x.Role)
+            .Distinct());
+        UserReadDto user = JsonConvert.DeserializeObject<UserReadDto>(json);
+        return View(user);
+    }
+
+    [HttpGet]
+    public async Task<UserReadDto> Get(Guid id)
+    {
+        return await _mediator.Send(new GetUserRequest() { id = id });
+    }
+
+
+
     [HttpPost]
     public async Task<IActionResult> Create(UserCreateDto user)
     {
@@ -38,6 +59,20 @@ public class UserController : Controller
             return View("Result");
         }
         ViewBag.Message = "Ошибка создания!";
+        return View("Result");
+    }
+
+    public async Task<IActionResult> Update(UserUpdateDto user)
+    {
+        await _mediator.Send(new UserUpdateRequest() { userUpdateDto = user });
+        ViewBag.Message = "Ошибка создания!";
+        return View("Result");
+    }
+
+    [HttpDelete]
+    public async Task<IActionResult> Delete(Guid id)
+    {
+        await _mediator.Send(new DeleteUserRequest() { userId = id });
         return View("Result");
     }
 

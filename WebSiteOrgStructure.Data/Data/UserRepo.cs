@@ -24,6 +24,17 @@ public class UserRepo : IUserRepo
         await _context.AddAsync(user);
     }
 
+    public void DeleteUserAsync(User user)
+    {
+        ArgumentNullException.ThrowIfNull(user);
+        _context.Remove(user);
+    }
+
+    public async Task<User?> GetUserByIdAsync(Guid userId)
+    {
+        return await _context.Users.FirstOrDefaultAsync(c => c.Id == userId);
+    }
+
     public async Task<List<DepartmentStruct>> GetCountUserAndRole()
     {
         return await _context.Users
