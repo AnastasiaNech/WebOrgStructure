@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
 namespace WebSiteOrgStructure.Dtos;
-
 public class UserCreateDto
 {
     [Required]

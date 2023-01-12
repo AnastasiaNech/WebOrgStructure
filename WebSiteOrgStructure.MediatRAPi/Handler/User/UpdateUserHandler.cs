@@ -15,7 +15,6 @@ public class UpdateUserHandler : AsyncRequestHandler<UserUpdateRequest>
 
     public UpdateUserHandler(IUserBLL userBLL)
     {
-
         _userBLL = userBLL;
     }
 

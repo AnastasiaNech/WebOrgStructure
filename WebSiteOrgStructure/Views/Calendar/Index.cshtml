@@ -1,0 +1,80 @@
+﻿@using WebSiteOrgStructure.Data.Models;
+
+@model Str_Calendar
+
+<script src="~/lib/jquery/dist/jquery.min.js" type="text/javascript"></script>
+<script src="~/js/site.js" type="text/javascript"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.ui.position.js"></script>
+
+
+<script type="text/javascript">
+    $(function () {
+        $.contextMenu({
+            selector: '.context-menu-one',
+            trigger: 'right',
+            build: function (element, event) {
+                return {
+                    callback: function (key, options) {
+                        var dayNumber = $(this).attr('dayNumber');
+                        var dayName = $(this).attr('dayName');
+                        if (key == 'add') {
+                            $(document).ready(function () {
+                                var createEvent = new CreateEventForm(dayNumber, dayName);
+                                document.body.style.overflow = "hidden";
+                                createEvent.show()
+                                    .done(function (result) {
+                                        document.body.style.overflow = "";
+                                        if (result) {
+                                            location.reload();
+                                        }
+                                    });
+                            });
+                        }
+                    },
+                    items: {
+                        "add": { name: "Добавить событие", icon: "add" },
+                    }
+                }
+            }
+        });
+    });
+</script>
+<div class="calendar">
+    <div class="header">
+        @Model.Date.ToString("MMMM yyyy")
+    </div>
+    <table cellpadding="0" cellspacing="0">
+        @foreach (var name in @Model.DaysName)
+        {
+            <th>@name</th>
+            <th>События</th>
+            @foreach (var c in @Model.Days)
+            {
+                <tr>
+                    @if (@c.DayName == name.ToLower())
+                    {
+                        <td class="context-menu-one btn btn-neutral" dayNumber=@c.DayNumber  dayName=@c.DayName>
+                            @c.DayNumber
+                        </td>
+                        @if (@Model.Events.Select(x => x.DayNumber).Contains(@c.DayNumber))
+                        {
+                            @foreach (var e in @Model.Events.Where(x => x.DayNumber == c.DayNumber))
+                            {
+                                <td>
+                                    @e.EventText
+                                </td>
+                            }
+                        }
+                        else
+                        {
+                            <td></td>
+                        }
+                    }
+                </tr>
+            }
+        }
+    </table>
+</div>
+

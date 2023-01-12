@@ -12,7 +12,6 @@ public class GetDepartmentsListHandler : IRequestHandler<GetDepartmentsRequest, 
 
     public GetDepartmentsListHandler(IDepartmentBLL departmentBLL)
     {
-
         _departmentBLL = departmentBLL;
     }
 

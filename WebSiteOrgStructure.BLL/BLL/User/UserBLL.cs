@@ -4,8 +4,7 @@ using WebSiteOrgStructure.Dtos;
 using WebSiteOrgStructure.Models;
 
 namespace WebSiteOrgStructure.BLL;
-
-public class UserBLL: IUserBLL
+public class UserBLL : IUserBLL
 {
     private readonly IMapper _mapper;
     private readonly IUserRepo _repo;
@@ -26,7 +25,7 @@ public class UserBLL: IUserBLL
 
     public async Task UpdateAsync(UserUpdateDto user)
     {
-     
+
         var userUpdate = await _repo.GetUserByIdAsync(user.Id);
         ArgumentNullException.ThrowIfNull(userUpdate);
         _mapper.Map(user, userUpdate);

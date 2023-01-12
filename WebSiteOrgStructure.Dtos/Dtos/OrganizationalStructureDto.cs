@@ -7,7 +7,6 @@ public class OrganizationalStructureDto
     public string? ParentDepartmentName { get; set; }
     public string? Role { get; set; }
     public string? Name { get; set; }
-
     public string? Surname { get; set; }
 }
 

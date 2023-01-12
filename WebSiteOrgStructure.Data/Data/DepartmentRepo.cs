@@ -22,16 +22,6 @@ public class DepartmentRepo : IDepartmentRepo
         await _context.AddAsync(department);
     }
 
-    public List<string?> GetDepartmentList(string departmentName)
-    {
-        return _context.Departments
-       .AsQueryable()
-       .Where(x => x.ParentDepartmentName == departmentName)
-       .Select(x => x.DepartmentName)
-       .Distinct()
-       .ToList();
-    }
-
     public async Task<List<Department>> GetDepartmentsListAsync()
     {
         return await _context.Departments

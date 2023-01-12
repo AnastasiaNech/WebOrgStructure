@@ -18,7 +18,6 @@ public class DepartmentController : Controller
 
     public IActionResult Index()
     {
-        //refactoring
         ViewBag.ParentDepartments = new SelectList
             (new SelectList(_mediator.Send(new GetDepartmentsRequest()).Result
             .Where(x => x.ParentDepartmentName == null)

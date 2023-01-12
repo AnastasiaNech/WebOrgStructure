@@ -1,7 +1,6 @@
 ﻿using WebSiteOrgStructure.Models;
 
 namespace WebSiteOrgStructure.Data.Interface;
-
 public interface IUserRepo
 {
     Task CreateUserAsync(User user);

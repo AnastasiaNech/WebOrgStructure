@@ -1,8 +1,5 @@
 ﻿namespace WebSiteOrgStructure.Dtos;
-
-public class DepartmentReadDto
+public class DepartmentReadDto: DepartmentCreateDto
 {
     public Guid Id { get; set; }
-    public string? DepartmentName { get; set; }
-    public string? ParentDepartmentName { get; set; }
 }

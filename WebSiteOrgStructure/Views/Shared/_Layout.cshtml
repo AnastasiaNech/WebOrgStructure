@@ -19,13 +19,16 @@
             <a href="/department">
                 <div class="employees">Департаменты</div>
             </a>
+              <a href="/calendar">
+                <div class="employees">Календарь</div>
+            </a>
         </div>
     </header>
     <main>
         @RenderBody()
     </main>    
     <main>
-        @RenderSection("Scripts", false)
+       @RenderSection("Scripts", false)
     </main>
     <footer>Все права защищены,@DateTime.Now.Year</footer>
     </div>

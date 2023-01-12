@@ -1,9 +1,9 @@
-﻿using OfficeOpenXml.FormulaParsing.Excel.Functions.Math;
+﻿using WebAPICalendar.DataContract;
+using WebSiteOrgStructure.Data.Models;
 using WebSiteOrgStructure.Dtos;
 using WebSiteOrgStructure.Models;
 
 namespace WebSiteOrgStructure.Profile;
-
 public class MappingProfile : AutoMapper.Profile
 {
     public MappingProfile()
@@ -22,5 +22,13 @@ public class MappingProfile : AutoMapper.Profile
            .ForMember(dest => dest.ParentDepartmentName,
           opt => opt.MapFrom(src => src.CheckParent == "Yes" ? null : src.ParentDepartmentName));
         CreateMap<UserUpdateDto, User>();
+        CreateMap<Calendar, Str_Calendar>()
+            .ForMember(dest => dest.Events,
+            opt => opt.MapFrom(src => new List<Event>()));
+        CreateMap<Str_Calendar, Calendar>();
+        CreateMap<EventCreateDto, Event>()
+           .ForMember(dest => dest.Id,
+            opt => opt.MapFrom(src => Guid.NewGuid())); ;
+        CreateMap<Event, EventReadDto>();
     }
 }

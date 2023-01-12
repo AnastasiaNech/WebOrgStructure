@@ -64,8 +64,15 @@ public class UserController : Controller
 
     public async Task<IActionResult> Update(UserUpdateDto user)
     {
-        await _mediator.Send(new UserUpdateRequest() { userUpdateDto = user });
-        ViewBag.Message = "Ошибка создания!";
+        try
+        {
+            await _mediator.Send(new UserUpdateRequest() { userUpdateDto = user });
+            ViewBag.Message = "Информация о пользователе успешно изменена.";
+        }
+        catch 
+        { 
+            ViewBag.Message = "Возникла ошибка при редактировании.";
+        }
         return View("Result");
     }
 

@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WebAPICalendar.DataContract\WebAPICalendar.DataContract.csproj" />
     <ProjectReference Include="..\WebSiteOrgStructure.Dtos\WebSiteOrgStructure.Dtos.csproj" />
   </ItemGroup>
 

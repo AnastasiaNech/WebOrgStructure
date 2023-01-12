@@ -258,3 +258,152 @@ th, td {
 td {
     background: #D8E6F3;
 }
+
+.calendar {
+    border: 1px solid #d96614;
+}
+
+    .calendar .header {
+        padding: 10px;
+        font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+        text-align: center;
+        color: #557A95;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    .calendar table {
+        width: 100%;
+    }
+
+        .calendar table tr th, .calendar table tr td {
+            font-weight: normal;
+            text-align: center;
+            vertical-align: top;
+            padding: 10px;
+            width: 14.25%;
+        }
+
+        .calendar table tr th {
+            background: #B1A296;
+        }
+
+        .calendar table tr td {
+            padding-top: 30px;
+            height: 50px;
+        }
+
+            .calendar table tr td .weekend-or-holiday {
+                color: #ff0000;
+            }
+
+            .calendar table tr td .today {
+                color: #00cc00 !important;
+            }
+
+            .calendar table tr td .day .date {
+                font-size: 20px;
+            }
+
+            .calendar table tr td .day .events {
+            }
+
+                .calendar table tr td .day .events .event {
+                    color: #ff0000;
+                    font-size: 10px;
+                    margin-top: 5px;
+                }
+
+.calendarWeek {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    background: #557A95;
+}
+
+.formbackground {
+    display: block;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.2);
+    overflow: auto;
+}
+
+.formEvent {
+    position: relative;
+    margin: auto;
+    width: 700px;
+    border-radius: 12px;
+    background-color: #D8E6F3;
+    box-shadow: 0 0 50px 0 rgba(119,116,116,0.5);
+    transform: translateY(5%);
+}
+
+.formHeader {
+    padding: 10px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    text-align: center;
+    color: #557A95;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.formBody {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 19px;
+}
+
+    .formBody label {
+        color: rgba(0,0,0,0.68);
+        font-family: Verdana;
+        font-size: 1em;
+        line-height: 1.2em;
+    }
+
+    .formBody input {
+        box-sizing: border-box;
+        height: 28px !important;
+        width: 100% !important;
+        background-color: #FBFBFB;
+        border: 1px solid rgba(163,163,163,0.5);
+        border-radius: 3px !important;
+        color: #444;
+        font-family: Verdana;
+        font-size: 1em;
+        line-height: 1.2em;
+        cursor: pointer;
+    }
+
+.formTextEvent {
+    padding: 10px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    color: #557A95;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.formButton {
+    padding-top: 25px;
+    padding-bottom: 28px;
+    text-align: center;
+}
+
+    .formButton input[type='submit'] {
+        white-space: normal;
+        width: 30% !important;
+        text-align: center;
+        font-size: 15px;
+        border-radius: 5px;
+        margin: 20px 0 0 20px;
+        background: #d48750;
+        font-weight: bold;
+        color: #833904;
+        cursor: pointer;
+    }

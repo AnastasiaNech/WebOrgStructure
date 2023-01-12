@@ -1,5 +1,4 @@
 ﻿namespace WebSiteOrgStructure.Dtos;
-
 public class DepartmentCreateDto
 {
     public string? DepartmentName { get; set; }

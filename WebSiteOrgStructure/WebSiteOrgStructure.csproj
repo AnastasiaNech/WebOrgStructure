@@ -23,6 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WebAPICalendar.DataClient\WebAPICalendar.DataClient.csproj" />
+    <ProjectReference Include="..\WebAPICalendar.DataContract\WebAPICalendar.DataContract.csproj" />
     <ProjectReference Include="..\WebSiteOrgStructure.MediatRAPi\WebSiteOrgStructure.MediatRAPi.csproj" />
   </ItemGroup>
 

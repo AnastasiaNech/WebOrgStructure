@@ -18,6 +18,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestExcel", "TestExcel", "{
 		..\..\Рабочий стол\Тестовое задание онли\Тестовые данные.xlsx = ..\..\Рабочий стол\Тестовое задание онли\Тестовые данные.xlsx
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPICalendar.DataClient", "WebAPICalendar.DataClient\WebAPICalendar.DataClient.csproj", "{9D3F1FB1-90C1-4277-AD9D-A068EC67C1A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPICalendar.DataContract", "WebAPICalendar.DataContract\WebAPICalendar.DataContract.csproj", "{B3D36CCB-5E3F-4E38-8A23-6711FB1D67CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +48,14 @@ Global
 		{7C83DDB3-0AD3-45D1-8D4C-20E398BA86F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C83DDB3-0AD3-45D1-8D4C-20E398BA86F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C83DDB3-0AD3-45D1-8D4C-20E398BA86F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D3F1FB1-90C1-4277-AD9D-A068EC67C1A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D3F1FB1-90C1-4277-AD9D-A068EC67C1A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D3F1FB1-90C1-4277-AD9D-A068EC67C1A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D3F1FB1-90C1-4277-AD9D-A068EC67C1A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3D36CCB-5E3F-4E38-8A23-6711FB1D67CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3D36CCB-5E3F-4E38-8A23-6711FB1D67CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3D36CCB-5E3F-4E38-8A23-6711FB1D67CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3D36CCB-5E3F-4E38-8A23-6711FB1D67CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

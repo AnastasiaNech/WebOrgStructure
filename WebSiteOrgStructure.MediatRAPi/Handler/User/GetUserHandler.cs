@@ -15,7 +15,6 @@ public class GetUserHandler : IRequestHandler<GetUserRequest, UserReadDto>
 
     public GetUserHandler(IUserBLL userBLL)
     {
-
         _userBLL = userBLL;
     }
 

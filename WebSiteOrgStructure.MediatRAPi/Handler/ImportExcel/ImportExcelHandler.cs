@@ -17,10 +17,8 @@ public class ImportExcelHandler : IRequestHandler<ImportExcelRequest, bool>
 
     public ImportExcelHandler(IImportExcelRepo importRepo)
     {
-
         _importRepo = importRepo;
     }
-
     public async Task<bool> Handle(ImportExcelRequest request, CancellationToken cancellation = default)
     {
         using (var steam = new MemoryStream())

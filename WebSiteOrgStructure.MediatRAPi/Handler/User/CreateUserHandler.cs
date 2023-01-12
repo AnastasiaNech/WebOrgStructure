@@ -15,10 +15,8 @@ public class CreateUserHandler : IRequestHandler<CreateUserRequest, UserReadDto>
 
     public CreateUserHandler(IUserBLL userBLL)
     {
-
         _userBLL = userBLL;
     }
-
     public async Task<UserReadDto> Handle(CreateUserRequest request, CancellationToken cancellation = default)
     {
         return await _userBLL.CreateAsync(request.userCreateDto);

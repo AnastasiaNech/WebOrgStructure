@@ -1,8 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Xml.Linq;
 
 namespace WebSiteOrgStructure.Dtos;
-
 public class UserReadDto
 {
     public Guid Id { get; set; }

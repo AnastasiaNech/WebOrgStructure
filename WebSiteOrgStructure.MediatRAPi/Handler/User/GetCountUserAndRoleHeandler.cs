@@ -12,7 +12,6 @@ public class GetCountUserAndRoleHandler : IRequestHandler<GetCountUserAndRoleReq
 
     public GetCountUserAndRoleHandler(IUserBLL userBLL)
     {
-
         _userBLL = userBLL;
     }
 

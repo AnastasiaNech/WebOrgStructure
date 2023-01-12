@@ -12,7 +12,6 @@ public class GetUsersListHandler : IRequestHandler<GetUsersListRequest, List<Use
 
     public GetUsersListHandler(IUserBLL userBLL)
     {
-
         _userBLL = userBLL;
     }
 
